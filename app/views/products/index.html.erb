@@ -1,0 +1,15 @@
+<h1>Here are your items:</h1>
+
+<ul>  
+  <%= cart.each do |product| %> #refer to cart directly, not as instance variable
+    <li><%= product %></li>
+  <% end %>
+</ul>
+
+<h1>Add a new item:</h1>
+
+<%= form_tag('/products/add') do %>
+    <%= label_tag :product %>
+    <%= text_field_tag :product %>
+    <%= submit_tag "add to cart" %>
+<% end %>
